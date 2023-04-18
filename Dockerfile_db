@@ -1,0 +1,6 @@
+FROM postgres
+
+ENV POSTGRES_USER admin
+ENV POSTGRES_PASSWORD admin
+ENV POSTGRES_DB file_system_db
+ENV PGPORT 5431

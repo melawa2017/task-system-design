@@ -1,0 +1,16 @@
+#//-- Build docker image:
+docker build -t db_file_system_img .
+
+#//-- Run docker container from image:
+docker run -d -p 5431:5431 --name=db_file_system_con  db_file_system_img
+
+#//--Get into the docker container:
+docker exec -it 6fd1f6ca4795 /bin/bash
+
+##//--Get into postgreSQL:
+psql -U postgres
+
+======================================
+# for app
+
+docker build -t app_system_design_img .
