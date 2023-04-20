@@ -1,0 +1,138 @@
+{
+  "info": {
+    "_postman_id": "6cabc585-63cd-49d6-8f95-a7bb62d58a06",
+    "name": "digi-vision-postmantCollection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "item_space",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"stc-assessments\",\r\n    \"itemType\":\"SPACE\",\r\n     \"createGroupDto\":{\r\n      \"groupName\":\"admin\",\r\n       \"createPermissionDtoList\":[\r\n           {\r\n               \"permissionLevel\":\"VIEW\",\r\n               \"userEmail\":\"user1\"\r\n           },\r\n           {\r\n               \"permissionLevel\":\"EDIT\",\r\n               \"userEmail\":\"user2\"\r\n           }\r\n       ]\r\n     }\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/item/space",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "item",
+            "space"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "item_folder",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\":\"backend2\",\r\n    \"itemParentId\":1,\r\n    \"loginUser\":\"user2\",\r\n    \"itemType\":\"FOLDER\"\r\n    \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/item/folder",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "item",
+            "folder"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "item_file",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "multipart/form-data",
+            "type": "text",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "fileInfo",
+              "value": "{\n    \"name\":\"file2.txt\",\n    \"itemParentId\":\"1\",\n    \"loginUser\":\"user2\",\n    \"itemType\":\"FILE\"\n    \n}",
+              "contentType": "application/json",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "contentType": "multipart/form-data",
+              "type": "file",
+              "src": "/C:/Users/EGYPT/Desktop/friendSalaryLagerthanu.txt"
+            },
+            {
+              "key": "user",
+              "value": "",
+              "type": "text",
+              "disabled": true
+            }
+          ],
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8081/item/file",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8081",
+          "path": [
+            "item",
+            "file"
+          ],
+          "query": [
+            {
+              "key": "user",
+              "value": "user1",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getFile",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": null
+      },
+      "response": []
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 package com.stc.digi.system_design.dtos;
 
+import jakarta.persistence.Lob;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
@@ -24,6 +25,10 @@ public class CreateItemDto {
     private CreateGroupDto createGroupDto;
     // optional login user
     private String loginUser;
+
+    // optional
+    @Lob
+    private byte[] binaryFile;
 
 
 }
